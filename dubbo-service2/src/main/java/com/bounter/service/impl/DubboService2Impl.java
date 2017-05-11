@@ -8,4 +8,9 @@ import org.springframework.stereotype.Service;
  */
 @Service("dubboService2")
 public class DubboService2Impl implements DubboService2 {
+
+	@Override
+	public String sayHello(String name) {
+		 return "hello " + name + ", this is dubbo service2";
+	}
 }

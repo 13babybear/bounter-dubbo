@@ -9,6 +9,13 @@
     <artifactId>dubbo-web</artifactId>
     <packaging>war</packaging>
 
+	<dependencies>
+        <dependency>
+            <groupId>com.bounter</groupId>
+            <artifactId>dubbo-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <!-- jetty server -->
@@ -19,9 +26,9 @@
                 <version>9.4.3.v20170317</version>
                 <configuration>
                     <!-- jetty热部署 -->
-                    <scanIntervalSeconds>2</scanIntervalSeconds>
+                    <scanIntervalSeconds>3</scanIntervalSeconds>
                     <httpConnector>
-                        <port>28080</port>
+                        <port>8080</port>
                         <idleTimeout>60000</idleTimeout>
                     </httpConnector>
                     <!-- web上下文 -->
