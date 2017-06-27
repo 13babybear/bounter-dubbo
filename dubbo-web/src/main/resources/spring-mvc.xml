@@ -10,6 +10,10 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd ">
+        
+    <!-- 引入dubbo配置，解决dubbo注解不兼容问题 -->    
+    <import resource="classpath:spring-dubbo.xml"/>
+    
     <!-- 1:启用注解驱动的SpringMVC -->
     <mvc:annotation-driven />
 
@@ -24,5 +28,5 @@
     />
 
     <!-- 4:扫描controller包，应用Spring的注解 -->
-    <context:component-scan base-package="com.bounter"/>
+    <context:component-scan base-package="com.bounter" />
 </beans>

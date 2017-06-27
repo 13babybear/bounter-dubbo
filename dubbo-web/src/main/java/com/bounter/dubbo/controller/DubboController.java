@@ -1,11 +1,10 @@
 package com.bounter.dubbo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.bounter.dubbo.api.service.DubboService1;
-import com.bounter.dubbo.api.service.DubboService2;
 
 /**
  * Created by admin on 2017/5/7.
@@ -14,19 +13,20 @@ import com.bounter.dubbo.api.service.DubboService2;
 @RequestMapping("/dubbo")
 public class DubboController {
 	
-	@Autowired
+	@Reference
 	private DubboService1 dubboService1;
 	
-	@Autowired
-	private DubboService2 DubboService2;
+//	@Autowired
+//	@Reference
+//	private DubboService2 DubboService2;
 	
 	@RequestMapping(value = "/sayHello1")
 	public String sayHello1(String name) {
-		return "hello1";
+		return dubboService1.sayHello("simon");
 	}
 	
-	@RequestMapping(value = "/sayHello2")
-	public String sayHello2(String name) {
-		return "hello2";
-	}
+//	@RequestMapping(value = "/sayHello2")
+//	public String sayHello2(String name) {
+//		return "hello2";
+//	}
 }
